@@ -1,0 +1,44 @@
+---
+title: "Introduction"
+author: "Matthew DeVerna"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    number_sections: false
+  pdf_document: default
+  word_document: default
+---
+
+# Set up
+
+This is a simple notebook that simply sets up your R environment with the necessary packages.
+By running the below, you should be ready to go for the rest of the textbook.
+
+This list of packages is taken from [here](https://r4ds.hadley.nz/intro).
+
+```{r setup, include=TRUE}
+options(repos = c(CRAN = "https://cran.rstudio.com/"))
+install.packages('knitr')
+install.packages('tidyverse')
+
+install.packages(
+  c("arrow", "babynames", "curl", "duckdb", "gapminder", 
+    "ggrepel", "ggridges", "ggthemes", "hexbin", "janitor", "Lahman", 
+    "leaflet", "maps", "nycflights13", "openxlsx", "palmerpenguins", 
+    "repurrrsive", "tidymodels", "writexl")
+  )
+
+# Global options for the document
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+
+library(tidyverse)
+```
+
+
+### One-off examples.
+
+As stated within the page linked above, these packages should cover most of the code.
+However, there will be one-off examples.
+If you run into issues where `R` is telling you that, for example, `packagex` does not exist, you should run `install.packages('packagex')`.
